@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Designações na RVM</title>
+    <!-- 
+      Note: Tailwind Play CDN is used for development/demo purposes.
+      For production, Tailwind should be installed as a dependency and bundled.
+      The Play CDN does not support SRI hashes.
+    -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       :root {
@@ -26,7 +31,12 @@
 <body class="bg-gray-100 dark:bg-gray-900">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+      integrity="sha512-q+4liFwdPC/bNdhUpZx6aXDx/h77yEQtn/7D4EGPLm/S4yrjZnvqZq8TrBVFMM/AZX6/qq0ysUkTqKIOFTWzEw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+    </script>
     <script>
       if (typeof pdfjsLib !== 'undefined') {
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
